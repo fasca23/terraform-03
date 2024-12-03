@@ -34,6 +34,7 @@
 РЕШЕНИЕ
 
 РИС 1.0
+![1 0](https://github.com/user-attachments/assets/2b89bdfe-fee8-4920-86b8-1e5dad4a78c2)
 
 
 ------
@@ -55,7 +56,10 @@ variable "each_vm" {
 РЕШЕНИЕ
 
 РИС 2.0
+![2 0](https://github.com/user-attachments/assets/902802bf-9ae6-471a-a08f-41d4bc8dfb53)
+
 РИС 2.1
+![2 1](https://github.com/user-attachments/assets/70d1dafe-a433-45c6-9d08-8cd26a75b5a8)
 
 ------
 
@@ -67,9 +71,16 @@ variable "each_vm" {
 РЕШЕНИЕ
 
 РИС 3.0
+![3 0](https://github.com/user-attachments/assets/54fb0993-7b5e-4c2f-845d-01760edba5f3)
+
 РИС 3.1
+![3 1](https://github.com/user-attachments/assets/37d3a5ff-7545-48f1-bca0-dcc45b0ca1c4)
+
 РИС 3.2
+![3 2](https://github.com/user-attachments/assets/657a3e59-f6f5-48f4-a9a5-1412ada1fe4b)
+
 РИС 3.3
+![3 3](https://github.com/user-attachments/assets/24a4ff01-e2f1-4478-a626-1d59ee97fff7)
 
 ------
 
@@ -102,7 +113,10 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 РЕШЕНИЕ
 
 РИС 4.0
+![4 0](https://github.com/user-attachments/assets/3791cc53-f456-40d2-9f1a-82bb87222f25)
+
 РИС 4.1
+![4 1](https://github.com/user-attachments/assets/3c59681b-20eb-4db0-a609-5e72fb3b60bd)
 
 ------
 
@@ -134,6 +148,7 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 РЕШЕНИЕ
 
 РИС 5.0
+![5 0](https://github.com/user-attachments/assets/176fdd01-8677-48ec-88b8-f3022ef3edff)
 
 ------
 
@@ -191,11 +206,14 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
   ]
 }
 
+```
+
 РЕШЕНИЕ
 
 РИС 7.0
+![7 0](https://github.com/user-attachments/assets/a115822e-748d-406b-b96d-658a247028ca)
 
-```
+
 ### Задание 8* (необязательное)
 Идентифицируйте и устраните намеренно допущенную в tpl-шаблоне ошибку. Обратите внимание, что terraform сам сообщит на какой строке и в какой позиции ошибка!
 ```
