@@ -1,6 +1,11 @@
 ### По заданию 2
 
 resource "yandex_compute_instance" "web" {
+
+# Исправление ошибки №1
+#   4. ВМ из пункта 2.1 должны создаваться после создания ВМ из пункта 2.2.
+  depends_on = [yandex_compute_instance.db]
+
   count = 2
   name  = "web-${count.index + 1}"
   platform_id = var.vm_resource[0].platform
@@ -31,11 +36,4 @@ resource "yandex_compute_instance" "web" {
   scheduling_policy {
     preemptible = var.vm_resource[0].preemptible
   }
-
-#   4. ВМ из пункта 2.1 должны создаваться после создания ВМ из пункта 2.2.
-  depends_on = [
-    yandex_vpc_security_group.example,
-    yandex_compute_instance.db["main"],
-    yandex_compute_instance.db["replica"]
-  ]
 }

@@ -1,22 +1,19 @@
 ### По заданию 5
 
+# Исправление ошибки №3
 output "web_and_db_list" {
-  value = [
-    [
-      for instance in yandex_compute_instance.web : {
-      name = instance.name
-      id   = instance.id
-      fqdn = instance.fqdn
-      }
-    ],
-    [
-      for instance in yandex_compute_instance.db : {
-      name = instance.name
-      id   = instance.id
-      fqdn = instance.fqdn
-      }
-    ]
-  ]
+  value = flatten([
+    [for i in yandex_compute_instance.web : {
+      name = i.name
+      id   = i.id
+      fqdn = i.fqdn
+    }],
+    [for i in [yandex_compute_instance.storage] : {
+      name = i.name
+      id   = i.id
+      fqdn = i.fqdn
+    }]
+  ])
 }
 
 ### По заданию 7

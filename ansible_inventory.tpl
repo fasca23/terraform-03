@@ -1,14 +1,26 @@
+
 [webservers]
-%{ for server in webservers ~}
-${server.name} ansible_host=${server.ip} fqdn=${server.fqdn}
-%{ endfor ~}
+
+%{~ for i in webservers ~}
+
+${i.name}   ansible_host=${i["network_interface"][0]["nat_ip_address"]==null ? i["network_interface"][0]["ip_address"] : i["network_interface"][0]["nat_ip_address"]}
+
+%{~ endfor ~}
+
 
 [databases]
-%{ for db in databases ~}
-${db.name} ansible_host=${db.ip} fqdn=${db.fqdn}
-%{ endfor ~}
+
+%{~ for i in databases ~}
+
+${i.name}   ansible_host=${i["network_interface"][0]["nat_ip_address"]==null ? i["network_interface"][0]["ip_address"] : i["network_interface"][0]["nat_ip_address"]}
+
+%{~ endfor ~}
+
 
 [storage]
-%{ for st in storage ~}
-${st.name} ansible_host=${st.ip} fqdn=${st.fqdn}
-%{ endfor ~}
+
+%{~ for i in storage ~}
+
+${i.name}   ansible_host=${i["network_interface"][0]["nat_ip_address"]==null ? i["network_interface"][0]["ip_address"] : i["network_interface"][0]["nat_ip_address"]}
+
+%{~ endfor ~}

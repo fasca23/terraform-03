@@ -1,13 +1,14 @@
 
 ### По заданию 4
 
-resource "local_file" "ansible_inventory" {
-  content = templatefile("${path.module}/ansible_inventory.tpl",{
-    webservers = local.instance_list["web"]
-    databases  = local.instance_list["db"]
-    storage    = local.instance_list["storage"]
-  })
-  filename = "${abspath(path.module)}/hosts.cfg"
+# Исправление ошибки №2
 
-  depends_on = [yandex_compute_instance.web,yandex_compute_instance.db,yandex_compute_instance.storage]
+resource "local_file" "ansible_inventory" {
+  content = templatefile("${path.module}/ansible_inventory.tpl",
+   {webservers =  yandex_compute_instance.web
+    databases = yandex_compute_instance.db
+    storage = [yandex_compute_instance.storage]
+    }
+  )
+  filename = "${abspath(path.module)}/hosts.cfg"
 }
